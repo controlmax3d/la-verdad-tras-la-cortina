@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Verdad Tras La Cortina</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #555;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff3b2f;
+        }
+        .response {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #444;
+        }
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>La Verdad Tras La Cortina</h1>
+        <p>Explora tu ser interior y encuentra respuestas inspiradoras.</p>
+        <input type="text" id="questionInput" placeholder="Hazme una pregunta...">
+        <button onclick="getResponse()">Buscar Respuesta</button>
+        <div class="response" id="responseOutput"></div>
+        <div class="footer">Con amor y sabiduría infinita ❤️</div>
+    </div>
+
+    <script>
+        const responses = [
+            "Eres un ser único lleno de luz y amor. Confía en ti.",
+            "El yo soy es la chispa divina que habita en ti. Conéctate con ella.",
+            "El espíritu te guía siempre hacia el camino del crecimiento y la paz.",
+            "La conciencia es el reflejo de tu alma. Escucha su voz.",
+            "Siente el amor que fluye dentro de ti y compártelo con el mundo.",
+            "Cada día es una nueva oportunidad para descubrir quién eres realmente.",
+            "La verdad está en tu corazón. Solo necesitas escucharlo.",
+            "Confía en el proceso de la vida. Todo sucede por una razón.",
+            "Tu mayor fuerza está en tu capacidad de amar y perdonar.",
+            "Eres parte de algo más grande. Abraza tu conexión universal."
+        ];
+
+        function getResponse() {
+            const question = document.getElementById('questionInput').value.trim();
+            const responseOutput = document.getElementById('responseOutput');
+
+            if (question === "") {
+                responseOutput.textContent = "Por favor, hazme una pregunta.";
+                return;
+            }
+
+            const randomIndex = Math.floor(Math.random() * responses.length);
+            responseOutput.textContent = responses[randomIndex];
+        }
+    </script>
+</body>
+</html>
